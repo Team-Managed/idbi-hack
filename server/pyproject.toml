@@ -3,11 +3,12 @@ name = "server"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 dependencies = [
     "asyncpg>=0.31.0",
     "edge-tts>=7.2.8",
     "fastapi>=0.138.2",
+    "fastembed>=0.8.0",
     "faster-whisper>=1.2.1",
     "pydub>=0.25.1",
     "qdrant-client>=1.18.0",

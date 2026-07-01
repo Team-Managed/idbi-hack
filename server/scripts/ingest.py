@@ -5,7 +5,10 @@ from qdrant_client.models import Distance, VectorParams, SparseVectorParams
 COLLECTION_NAME = "financial_docs"
 
 def init_qdrant():
-    client = QdrantClient(url=os.getenv("QDRANT_URL", "http://localhost:6333"))
+    client = QdrantClient(
+        url=os.getenv("QDRANT_URL", "http://localhost:6333"),
+        api_key=os.getenv("QDRANT_API_KEY")
+    )
 
     if client.collection_exists(COLLECTION_NAME):
         print(f"Collection '{COLLECTION_NAME}' already exists — skipping creation.")
