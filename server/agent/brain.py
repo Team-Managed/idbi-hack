@@ -7,7 +7,7 @@ from db.neon_client import save_chat_history
 
 # Initialize the Gemini client safely
 try:
-    client = genai.Client(api_key=os.getenv("LLM_API_KEY"))
+    client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
 except ValueError:
     client = None  # Prevents crash on boot if the user hasn't added their key yet
 
@@ -30,7 +30,7 @@ async def process_query(session_id: str, transcript: str) -> AsyncGenerator[dict
     
     # 4. Stream the Gemini LLM response
     if not client:
-        yield {"type": "text", "content": "The AI is currently offline. Please set LLM_API_KEY."}
+        yield {"type": "text", "content": "The AI is currently offline. Please set GOOGLE_API_KEY."}
         return
 
     response = await client.aio.models.generate_content_stream(

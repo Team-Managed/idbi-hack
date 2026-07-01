@@ -4,7 +4,7 @@ An advanced, real-time AI digital wealth advisory platform featuring a full-dupl
 
 ## 🏗️ Architecture & Tech Stack
 
-This repository is a monorepo consisting of a robust backend for AI orchestration and a modern React frontend.
+This repository is a monorepo consisting of a robust backend for AI orchestration and a Next.js frontend.
 
 ### Backend (`/server`)
 - **Framework:** FastAPI (Python 3.12)
@@ -48,6 +48,14 @@ This repository is a monorepo consisting of a robust backend for AI orchestratio
 3. Start the FastAPI server (uv will automatically sync the `3.12` environment and install dependencies):
    ```bash
    uv run uvicorn main:app --reload
+   ```
+
+### 4. LLM API (Server-side Agent)
+1. Sign up for your preferred LLM provider (e.g., [OpenAI](https://platform.openai.com/api-keys) or [Anthropic](https://console.anthropic.com/)) or use Google AI Studio for Gemini.
+2. Generate a secret API key.
+3. Open **`server/.env`** and add it:
+   ```env
+   GOOGLE_API_KEY=sk-your_llm_api_key_here
    ```
 
 ### 3. Frontend Setup
